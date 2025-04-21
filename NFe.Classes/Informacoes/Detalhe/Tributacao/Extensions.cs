@@ -37,6 +37,11 @@ namespace NFe.Classes.Informacoes.Detalhe.Tributacao
             return GetPropDecimalValue(icms, "vBCST");
         }
 
+        public static decimal GetIcmsStValue(this ICMSBasico icms)
+        {
+            return GetPropDecimalValue(icms, "vICMSST");
+        }
+
         public static decimal GetIcmsDesonValue(this ICMSBasico icms)
         {
             return GetPropDecimalValue(icms, "vICMSDeson");
