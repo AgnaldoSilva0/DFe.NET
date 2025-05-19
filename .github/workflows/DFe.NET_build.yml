@@ -29,10 +29,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    
+
     - name: Setando Versao
       id: date
-      run: echo "date=$(date +'%Y.%m.%d.%H%M')" >> "$GITHUB_OUTPUT"
+      run: |
+        $date = Get-Date -Format "yyyy.MM.dd.HHmm"
+        echo "date=$date" >> $env:GITHUB_OUTPUT
 
     - name: Debug output date
       run: echo "Output date is '${{ steps.date.outputs.date }}'"
