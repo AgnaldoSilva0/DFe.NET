@@ -35,7 +35,9 @@ jobs:
       run: echo "date=$(date +'%Y.%m.%d.%H%M')" >> "$GITHUB_OUTPUT"
       
     - name: Versao
-      run: echo "${{ steps.date.outputs.date }}"
+      run: echo "$DATE"
+      env:
+        DATE: ${{ steps.date.outputs.date }}
       
     - name: Setup .NET 6.0.x
       uses: actions/setup-dotnet@v2
