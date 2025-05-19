@@ -40,9 +40,7 @@ jobs:
       run: echo "Output date is '${{ steps.date.outputs.date }}'"
       
     - name: Versao
-      run: echo "$DATE"
-      env:
-        DATE: ${{ steps.date.outputs.date }}
+      run: echo ${{ steps.date.outputs.date }}
       
     - name: Setup .NET 6.0.x
       uses: actions/setup-dotnet@v2
