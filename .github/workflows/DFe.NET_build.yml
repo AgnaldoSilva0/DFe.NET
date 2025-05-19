@@ -33,6 +33,9 @@ jobs:
     - name: Setando Versao
       id: date
       run: echo "date=$(date +'%Y.%m.%d.%H%M')" >> "$GITHUB_OUTPUT"
+
+    - name: Debug output date
+      run: echo "Output date is '${{ steps.date.outputs.date }}'"
       
     - name: Versao
       run: echo "$DATE"
